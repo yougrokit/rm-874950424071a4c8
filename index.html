@@ -1,0 +1,106 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TireGoods Roadmap</title>
+<style>
+:root{--bg:#121417;--panel:#1c2026;--steel:#2a3038;--line:#3a424d;--txt:#e8ecf1;--mut:#8b95a3;--acc:#f5b400;--hi:#e5383b;--med:#f59f00;--low:#8d96a0}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--bg);color:var(--txt);font-family:"Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;overflow:hidden}
+body{background:radial-gradient(ellipse at 20% 0%,#1d232b 0,transparent 60%),repeating-linear-gradient(45deg,#14171b 0 14px,#121417 14px 28px)}
+header{display:flex;align-items:center;justify-content:space-between;padding:1.6vh 2.5vw;border-bottom:3px solid var(--acc);background:linear-gradient(#1a1e24,#14171b)}
+.brand{display:flex;align-items:center;gap:1vw}.logo{width:clamp(34px,4vh,56px);height:clamp(34px,4vh,56px)}
+h1{margin:0;font-size:clamp(20px,3.4vh,44px);letter-spacing:.08em;text-transform:uppercase;font-weight:800}h1 span{color:var(--acc)}
+.sub{color:var(--mut);font-size:clamp(11px,1.5vh,18px);letter-spacing:.15em;text-transform:uppercase}
+.legend{display:flex;gap:1.4vw;flex-wrap:wrap;font-size:clamp(11px,1.5vh,17px);color:var(--mut)}.legend i{display:inline-block;width:.9em;height:.9em;border-radius:50%;margin-right:.35em;vertical-align:-1px}
+#stage{position:absolute;top:0;left:0;right:0;bottom:0}main{position:relative;height:calc(100% - var(--hh,90px))}
+svg{width:100%;height:100%;display:block}
+.road{fill:none;stroke:#2b3139;stroke-linecap:round}.road-edge{fill:none;stroke:#454e5a;stroke-linecap:round}
+.dash{fill:none;stroke:var(--acc);stroke-dasharray:18 22;stroke-linecap:round;animation:drive 2.5s linear infinite}@keyframes drive{to{stroke-dashoffset:-40}}
+.bub{cursor:pointer;opacity:0;transition:transform .3s}.bub.show{animation:pop .6s cubic-bezier(.2,1.6,.4,1) forwards}@keyframes pop{0%{opacity:0;transform:scale(.2)}100%{opacity:1;transform:scale(1)}}
+.bub .ring{fill:var(--panel);stroke-width:5}.bub.done{filter:saturate(.25) brightness(.75)}
+.bub.active .ring{stroke:#fff!important;filter:drop-shadow(0 0 14px var(--acc))}
+.lbl{fill:var(--txt);font-weight:700}.dt{fill:var(--mut);font-weight:600;letter-spacing:.05em}
+.today line{stroke:var(--acc);stroke-width:3;stroke-dasharray:6 6}.today text{fill:var(--acc);font-weight:800;letter-spacing:.15em}
+#panel{position:fixed;right:0;top:0;height:100%;width:min(460px,100%);background:var(--panel);border-left:4px solid var(--acc);transform:translateX(105%);transition:transform .35s ease;padding:28px 26px;overflow:auto;z-index:5;box-shadow:-20px 0 40px #0008}
+#panel.open{transform:none}#panel h2{margin:.3em 0 .6em;font-size:24px;line-height:1.25}#panel .x{position:absolute;right:14px;top:10px;background:none;border:0;color:var(--mut);font-size:30px;cursor:pointer}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.chip{padding:4px 10px;border-radius:3px;background:var(--steel);font-size:13px;text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+dl{display:grid;grid-template-columns:110px 1fr;gap:8px 12px;font-size:15px}dt{color:var(--mut);text-transform:uppercase;font-size:12px;letter-spacing:.1em;padding-top:2px}dd{margin:0;white-space:pre-wrap;word-break:break-word}
+dd a,#panel a.np{color:var(--acc)}#panel a.np{display:inline-block;margin-top:20px;font-weight:700;text-decoration:none;border:2px solid var(--acc);padding:8px 14px;border-radius:3px}
+#empty{position:absolute;inset:0;display:none;align-items:center;justify-content:center;color:var(--mut);font-size:22px}
+footer{position:fixed;left:2.5vw;bottom:1.2vh;color:var(--mut);font-size:clamp(10px,1.2vh,14px);letter-spacing:.08em}
+@media (max-width:700px){.legend{display:none}header{padding:10px 14px}}
+</style></head><body>
+<header id="hdr"><div class="brand"><svg class="logo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="#1b1b1b" stroke="#f5b400" stroke-width="6"/><circle cx="50" cy="50" r="22" fill="#2a3038" stroke="#8b95a3" stroke-width="4"/><g stroke="#3a424d" stroke-width="5">
+<line x1="50" y1="6" x2="50" y2="20"/><line x1="50" y1="80" x2="50" y2="94"/><line x1="6" y1="50" x2="20" y2="50"/><line x1="80" y1="50" x2="94" y2="50"/></g></svg>
+<div><h1>TireGoods <span>Roadmap</span></h1><div class="sub">TireGoods Trading LLC</div></div></div>
+<div class="legend"><span><i style="background:var(--hi)"></i>High</span><span><i style="background:var(--med)"></i>Medium</span><span><i style="background:var(--low)"></i>Low</span>
+<span>◆ Company stage</span><span>★ Event</span><span>⚙ App</span><span>▲ Project</span><span>● Other</span><span>✓ Done</span></div></header>
+<main id="main"><svg id="svg" preserveAspectRatio="xMidYMid meet"></svg><div id="empty">No roadmap items yet.</div></main>
+<aside id="panel"><button class="x" onclick="closeP()" aria-label="Close">×</button><div id="pc"></div></aside>
+<footer id="foot"></footer>
+<script id="data" type="application/json">{"fetched_at": "2026-10-09T21:45:00-07:00", "data_source": "collection://4f6151ae-249d-404d-a520-90128aab5674", "items": [{"id": "3f52fa87-4826-810d-9e72-f71794471b9d", "title": "SEMA Show 2026 (with AAPEX), Las Vegas", "section": "Upcoming event", "status": "Planned", "priority": "Medium", "date": "2026-11-03", "end": "2026-11-06", "details": "SEMA Show Nov 3-6, 2026, Las Vegas Convention Center (trade-only; public day Fri Nov 6). AAPEX runs Nov 3-5, 2026 alongside it. Official: https://www.semashow.com/ . Assumed this is the Nov Las Vegas tire event Ken meant (Global Tire Expo is held within SEMA); confirm.", "submitted_by": "Ken", "source": "Ken", "url": "https://app.notion.com/3f52fa874826810d9e72f71794471b9d"}, {"id": "3f52fa87-4826-812d-b85c-cfbbef909754", "title": "Test-1", "section": null, "status": null, "priority": null, "date": null, "end": null, "details": null, "submitted_by": null, "source": null, "url": "https://app.notion.com/3f52fa874826812db85ccfbbef909754"}, {"id": "3f52fa87-4826-8186-8405-ffcdf21aef59", "title": "File CA Statement of Information", "section": "Company stage", "status": "Planned", "priority": "High", "date": "2026-12-31", "end": null, "details": "Initial Statement of Information (LLC-12) due within 90 days of filing Articles (Corp. Code 17702.09): 2026-10-02 + 90 days = 2026-12-31. $20, file online at bizfile.sos.ca.gov. Then every 2 years (even years) in the Oct filing period: the registration month + 5 preceding months (May-Oct). $250 penalty if missed. Checklist: https://www.sos.ca.gov/business-programs/business-entities/starting-business-checklist", "submitted_by": "Ken", "source": "Ken", "url": "https://app.notion.com/3f52fa87482681868405ffcdf21aef59"}, {"id": "3f52fa87-4826-81ae-a438-fa5df01c26fc", "title": "LLC filed: TireGoods Trading LLC (CA)", "section": "Company stage", "status": "Done", "priority": "Low", "date": "2026-10-02", "end": null, "details": "Articles of Organization, CA LLC. Entity/Document No. B20260446894, filed 10/02/2026.", "submitted_by": "Ken", "source": "Ken", "url": "https://app.notion.com/3f52fa87482681aea438fa5df01c26fc"}]}</script>
+<script>
+const D=JSON.parse(document.getElementById('data').textContent);
+const PC={High:'#e5383b',Medium:'#f59f00',Low:'#8d96a0'};const SI={'Company stage':'◆','Upcoming event':'★','App needing work':'⚙','Ongoing project':'▲','Other':'●'};
+const items=D.items.filter(i=>i.title&&!/^test[-\s_]?\d*$/i.test(i.title.trim())).sort((a,b)=>(a.date||'9999')<(b.date||'9999')?-1:1);
+const today=new Date();today.setHours(0,0,0,0);const pd=s=>{const[y,m,d]=s.split('-');return new Date(+y,m-1,+d)};
+const fmt=(i)=>{if(!i.date)return'Unscheduled';const o={month:'short',day:'numeric',year:'numeric'};let s=pd(i.date).toLocaleDateString('en-US',o);if(i.end)s=pd(i.date).toLocaleDateString('en-US',{month:'short',day:'numeric'})+' – '+pd(i.end).toLocaleDateString('en-US',o);return s};
+const esc=s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const linkify=s=>esc(s).replace(/https?:\/\/[^\s)]+/g,u=>`<a href="${u}" target="_blank" rel="noopener">${u}</a>`);
+let nodes=[],active=-1,timer=null;const NS='http://www.w3.org/2000/svg';
+function el(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p&&p.appendChild(e);return e}
+function draw(){
+ document.getElementById('main').style.setProperty('--hh','0px');const hh=document.getElementById('hdr').offsetHeight;document.getElementById('main').style.height=(innerHeight-hh)+'px';
+ const svg=document.getElementById('svg');svg.innerHTML='';const W=svg.clientWidth,H=svg.clientHeight;svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+ document.getElementById('empty').style.display=items.length?'none':'flex';
+ const mob=W<700,n=Math.max(items.length,1);
+ // build winding path: horizontal serpentine (desktop) or vertical (mobile)
+ const pts=[];const segs=60;
+ for(let k=0;k<=segs;k++){const t=k/segs;if(!mob){pts.push([W*.06+t*W*.88,H*.55+Math.sin(t*Math.PI*2.4)*H*.22])}else{pts.push([W*.5+Math.sin(t*Math.PI*3)*W*.26,H*.06+t*H*.88])}}
+ let d='M'+pts.map(p=>p.map(v=>v.toFixed(1)).join(',')).join(' L');
+ const rw=Math.max(18,Math.min(W,H)*.045);
+ el('path',{d,class:'road-edge','stroke-width':rw+8},svg);const road=el('path',{d,class:'road','stroke-width':rw},svg);
+ const L=road.getTotalLength();[svg.lastChild,svg.firstChild].forEach(p=>{p.style.strokeDasharray=L;p.style.strokeDashoffset=L;p.animate([{strokeDashoffset:L},{strokeDashoffset:0}],{duration:1800,fill:'forwards',easing:'ease-in-out'})});
+ const dash=el('path',{d,class:'dash','stroke-width':3,opacity:0},svg);setTimeout(()=>dash.setAttribute('opacity',.8),1700);
+ // positions: date-proportional between min/max with min spacing; unscheduled at end
+ const dated=items.filter(i=>i.date);const ts=dated.map(i=>pd(i.date).getTime()).concat([today.getTime()]);
+ const t0=Math.min(...ts),t1=Math.max(...ts),span=Math.max(t1-t0,864e5);
+ const frac=t=>.07+.83*((t-t0)/span);
+ let fr=items.map(i=>i.date?frac(pd(i.date).getTime()):.96);
+ for(let k=1;k<fr.length;k++)if(fr[k]-fr[k-1]<.11)fr[k]=fr[k-1]+.11;const mx=Math.max(...fr,0);if(mx>.97)fr=fr.map(f=>.07+(f-.07)*(.9/(mx-.07)));
+ // today marker
+ const tf=frac(today.getTime());const tp=road.getPointAtLength(L*tf);
+ const tg=el('g',{class:'today',opacity:0},svg);el('line',{x1:tp.x,y1:tp.y-rw*1.6,x2:tp.x,y2:tp.y+rw*1.6},tg);
+ const tt=el('text',{x:tp.x,y:tp.y-rw*1.9,'text-anchor':'middle','font-size':Math.max(12,H*.018)},tg);tt.textContent='TODAY · '+today.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+ setTimeout(()=>tg.animate([{opacity:0},{opacity:1}],{duration:600,fill:'forwards'}),1600);
+ nodes=[];const R=Math.max(26,Math.min(W,H)*.05),fs=Math.max(12,Math.min(W,H)*.02);
+ items.forEach((it,k)=>{const p=road.getPointAtLength(L*fr[k]);const up=k%2==0;const off=(R*2.2)*(up?-1:1);
+  const cx=mob?p.x+(up?-1:1)*R*1.6:p.x,cy=mob?p.y:p.y+off;
+  const g=el('g',{class:'bub'+(it.status==='Done'?' done':''),tabindex:0,style:`transform-origin:${cx}px ${cy}px`},svg);
+  el('line',{x1:p.x,y1:p.y,x2:cx,y2:cy,stroke:'#5a6370','stroke-width':2,'stroke-dasharray':'4 4'},g);el('circle',{cx:p.x,cy:p.y,r:6,fill:'#f5b400'},g);
+  const col=PC[it.priority]||'#5a6370';el('circle',{cx,cy,r:R,class:'ring',stroke:col},g);
+  for(let a=0;a<12;a++){const an=a*Math.PI/6;el('line',{x1:cx+Math.cos(an)*(R-2),y1:cy+Math.sin(an)*(R-2),x2:cx+Math.cos(an)*(R+6),y2:cy+Math.sin(an)*(R+6),stroke:col,'stroke-width':4,opacity:.55},g)}
+  const ic=el('text',{x:cx,y:cy+R*.28,'text-anchor':'middle','font-size':R*.85,fill:col},g);ic.textContent=SI[it.section]||'●';
+  if(it.status==='Done'){el('circle',{cx:cx+R*.72,cy:cy-R*.72,r:R*.34,fill:'#2f9e44'},g);const c=el('text',{x:cx+R*.72,y:cy-R*.6,'text-anchor':'middle','font-size':R*.42,fill:'#fff','font-weight':900},g);c.textContent='✓'}
+  const lx=mob?(up?cx-R*1.25:cx+R*1.25):cx,anc=mob?(up?'end':'start'):'middle';
+  const ty=mob?cy-4:(up?cy-R-fs*2.2:cy+R+fs*1.6);
+  const words=it.title.split(' ');let lines=[''];const maxc=mob?16:24;words.forEach(w=>{if((lines.at(-1)+' '+w).trim().length>maxc)lines.push(w);else lines[lines.length-1]=(lines.at(-1)+' '+w).trim()});lines=lines.slice(0,3);
+  const tx=el('text',{x:lx,y:ty-(up&&!mob?(lines.length-1)*fs*1.1:0),'text-anchor':anc,class:'lbl','font-size':fs},g);
+  lines.forEach((ln,j)=>{const s=el('tspan',{x:lx,dy:j?fs*1.15:0},tx);s.textContent=ln});
+  const dy=mob?ty+lines.length*fs*1.15:(up?ty+fs*1.25:ty+lines.length*fs*1.15);
+  const dt=el('text',{x:lx,y:dy,'text-anchor':anc,class:'dt','font-size':fs*.8},g);dt.textContent=fmt(it).toUpperCase();
+  g.addEventListener('click',()=>{stopCycle();openP(k)});g.addEventListener('keydown',e=>{if(e.key==='Enter')openP(k)});
+  setTimeout(()=>g.classList.add('show'),1500+k*220);nodes.push(g)});
+ document.getElementById('foot').textContent=`${items.length} item${items.length==1?'':'s'} · data from Notion, ${new Date(D.fetched_at).toLocaleString('en-US',{dateStyle:'medium',timeStyle:'short'})} PT`;
+}
+function openP(k){const it=items[k];active=k;nodes.forEach((n,j)=>n.classList.toggle('active',j===k));
+ document.getElementById('pc').innerHTML=`<div class="chips"><span class="chip" style="background:${PC[it.priority]||'#3a424d'}">${esc(it.priority||'No priority')}</span><span class="chip">${esc(it.status||'—')}</span><span class="chip">${SI[it.section]||''} ${esc(it.section||'Unsorted')}</span></div>
+ <h2>${esc(it.title)}</h2><dl><dt>Date</dt><dd>${fmt(it)}</dd><dt>Section</dt><dd>${esc(it.section||'—')}</dd><dt>Status</dt><dd>${esc(it.status||'—')}</dd><dt>Priority</dt><dd>${esc(it.priority||'—')}</dd>
+ <dt>Details</dt><dd>${linkify(it.details)||'—'}</dd><dt>Submitted by</dt><dd>${esc(it.submitted_by||'—')}${it.source?' · via '+esc(it.source):''}</dd></dl>
+ ${it.url?`<a class="np" href="${esc(it.url)}" target="_blank" rel="noopener">Open in Notion →</a>`:''}`;document.getElementById('panel').classList.add('open')}
+function closeP(){document.getElementById('panel').classList.remove('open');nodes.forEach(n=>n.classList.remove('active'))}
+function stopCycle(){clearInterval(timer);timer=null}
+const q=new URLSearchParams(location.search);
+function startCycle(){const up=items.map((it,k)=>[it,k]).filter(([it])=>it.status!=='Done'&&(!it.date||pd(it.end||it.date)>=today)).map(x=>x[1]);if(!up.length)return;let c=0;
+ timer=setInterval(()=>{openP(up[c%up.length]);c++;setTimeout(()=>{if(timer)closeP()},9000)},12000)}
+draw();let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(draw,200)});
+if(q.has('cycle'))setTimeout(startCycle,4000);if(q.has('open'))setTimeout(()=>openP(+q.get('open')||0),3200);
+addEventListener('keydown',e=>{if(e.key==='Escape')closeP()});
+</script></body></html>
